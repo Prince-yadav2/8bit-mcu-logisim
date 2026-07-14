@@ -57,6 +57,9 @@ The MCU is built from 5 sub-circuits connected in the Main canvas:
                                     │   Data Memory  │
                                     │   RAM (Array)  │
                                     └────────────────┘
+
+![main](images/main.png)
+
 ```
 
 ### Sub-circuits
@@ -69,6 +72,14 @@ The MCU is built from 5 sub-circuits connected in the Main canvas:
 | **ALU** | Adder, Subtractor, AND, OR, NOT, MUX, D Flip-Flop | 8-bit arithmetic and logic, produces RESULT and NEG flag |
 | **ControlUnit** | Splitter, AND/OR/NOT gates, MUX | Decodes 4-bit opcode and drives all control signals |
 | **DataMemory** | RAM 16×8-bit | Stores array a[0..9] at addresses 0–9 |
+
+![pc](images/pc.png)
+
+![register_file](images/register_file.png)
+
+![alu](images/alu.png)
+
+![control_unit](images/control_unit.png)
 
 ---
 
