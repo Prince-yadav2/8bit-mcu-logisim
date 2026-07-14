@@ -35,28 +35,28 @@ Each iteration performs a **cyclic left rotation**:
 The MCU is built from 5 sub-circuits connected in the Main canvas:
 
 ```
-┌─────────────┐     ┌─────────────┐     ┌─────────────┐
-│   Counter   │────▶│  Program    │────▶│     IR      │
-│    (PC)     │     │    ROM      │     │  Register   │
-└─────────────┘     └─────────────┘     └──────┬──────┘
+┌─────────────┐      ┌─────────────┐      ┌─────────────┐
+│   Counter   │────▶│  Program    │ ────▶│     IR      │
+│    (PC)     │      │    ROM      │      │   Register  │
+└─────────────┘      └─────────────┘      └──────┬──────┘
                                                │
                     ┌──────────────────────────▼──────┐
-                    │         Splitter (16-bit)        │
+                    │         Splitter (16-bit)       │
                     │  15-12:opcode  11-9:RD  8-6:RS1 │
-                    │  5-3:RS2       2-0:IMM           │
-                    └───┬──────────┬──────────┬────────┘
+                    │  5-3:RS2       2-0:IMM          │
+                    └───┬──────────┬──────────┬───────┘
                         │          │          │
                ┌────────▼──┐  ┌───▼───┐  ┌──▼────────┐
                │  Control  │  │  Reg  │  │    ALU    │
                │   Unit    │  │  File │  │  8-bit    │
                └────────┬──┘  └───┬───┘  └──┬────────┘
-                        │         │          │
-                        └────────▶└──────────▶
-                                             │
-                                    ┌────────▼────────┐
-                                    │   Data Memory   │
-                                    │   RAM (Array)   │
-                                    └─────────────────┘
+                        │         │         │
+                        └───────▶└────────▶
+                                            │
+                                    ┌───────▼────────┐
+                                    │   Data Memory  │
+                                    │   RAM (Array)  │
+                                    └────────────────┘
 ```
 
 ### Sub-circuits
@@ -79,8 +79,8 @@ The MCU is built from 5 sub-circuits connected in the Main canvas:
 ```
  15  14  13  12  11  10   9   8   7   6   5   4   3   2   1   0
 ┌───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┐
-│      OPCODE      │      RD       │      RS1      │  RS2  │  IMM  │
-│     (4 bits)     │    (3 bits)   │    (3 bits)   │(3 bits│(3 bits│
+│      OPCODE   │      RD       │      RS1      │  RS2  │  IMM  │
+│     (4 bits)  │    (3 bits)   │    (3 bits)   │(3 bits│(3 bits│
 └───┴───┴───┴───┴───┴───┴───┴───┴───┴───┴───┴───┴───┴───┴───┴───┘
   bits 15-12          bits 11-9       bits 8-6      bits 5-3  bits 2-0
 ```
