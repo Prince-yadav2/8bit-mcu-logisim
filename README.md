@@ -191,7 +191,7 @@ Addresses 0–9 hold `a[0]` through `a[9]`.
 
 ---
 
-## Authors
+## Author
 
 **Prince Yadav**
 
