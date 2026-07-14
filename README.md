@@ -57,10 +57,9 @@ The MCU is built from 5 sub-circuits connected in the Main canvas:
                                     │   Data Memory  │
                                     │   RAM (Array)  │
                                     └────────────────┘
+```
 
 ![main](images/main.png)
-
-```
 
 ### Sub-circuits
 
